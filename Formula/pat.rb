@@ -1,0 +1,27 @@
+class Pat < Formula
+  desc "Send and receive email over Winlink"
+  homepage "https://github.com/la5nta/pat"
+  url "https://github.com/la5nta/pat.git", tag: "v0.17.0"
+  license "MIT"
+  head "https://github.com/la5nta/pat.git", branch: "develop"
+
+  livecheck do
+    strategy :github_latest
+  end
+
+  depends_on "go" => ">=1.19"
+
+  def install
+    git_rev = Utils.git_short_head
+
+    ldflags = %W[
+      -X github.com/la5nta/pat/internal/buildinfo.GitRev=#{git_rev}
+    ]
+
+    system "go", "build", *std_go_args(ldflags: ldflags)
+  end
+
+  test do
+    assert_match "v0.17.0", shell_output("#{bin}/pat version")
+  end
+end
