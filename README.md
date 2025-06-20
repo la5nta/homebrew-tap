@@ -1,4 +1,4 @@
-# LA5NTA Pat Homebrew Tap
+# LA5NTA Homebrew Tap
 
 Homebrew formulae for [Pat](https://github.com/la5nta/pat) and related tools.
 
@@ -6,7 +6,7 @@ Homebrew formulae for [Pat](https://github.com/la5nta/pat) and related tools.
 
 ```bash
 # Add this tap
-brew tap la5nta/pat
+brew tap la5nta/tap
 
 # Install pat
 brew install pat
