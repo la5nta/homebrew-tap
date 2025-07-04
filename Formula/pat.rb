@@ -24,4 +24,11 @@ class Pat < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/pat version")
   end
+
+  service do
+    run [opt_bin/"pat", "http"]
+    keep_alive true
+    log_path var/"log/pat.log"
+    error_log_path var/"log/pat.log"
+  end
 end
