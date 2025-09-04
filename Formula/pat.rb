@@ -9,7 +9,7 @@ class Pat < Formula
     strategy :github_latest
   end
 
-  depends_on "go" => ">=1.19"
+  depends_on "go" => ">=1.24"
 
   def install
     git_rev = Utils.git_short_head
