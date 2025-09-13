@@ -1,7 +1,7 @@
 class Pat < Formula
   desc "Send and receive email over Winlink"
   homepage "https://github.com/la5nta/pat"
-  url "https://github.com/la5nta/pat.git", tag: "v0.19.0"
+  url "https://github.com/la5nta/pat.git", tag: "v0.19.1"
   license "MIT"
   head "https://github.com/la5nta/pat.git", branch: "develop"
 
