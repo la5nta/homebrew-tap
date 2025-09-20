@@ -22,20 +22,7 @@ class Voacapl < Formula
     system "make", "install"
   end
 
-  def caveats
-    <<~EOS
-      To complete the installation, you must run the setup script:
-        makeitshfbc
-
-      This will create the necessary data files in ~/itshfbc.
-
-      After setup, you must provide the path to the data directory as the
-      first argument. For example:
-        voacapl --run-dir=. ~/itshfbc input.dat output.out
-    EOS
-  end
-
   test do
-    system "true"
+    system "#{bin}/voacapl", "--version"
   end
 end
