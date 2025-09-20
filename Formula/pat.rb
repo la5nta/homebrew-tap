@@ -22,7 +22,7 @@ class Pat < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/pat version")
+    assert_match "Pat v#{version}", shell_output("#{bin}/pat version")
   end
 
   service do
