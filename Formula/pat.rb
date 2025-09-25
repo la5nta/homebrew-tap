@@ -12,13 +12,7 @@ class Pat < Formula
   depends_on "go" => ">=1.24"
 
   def install
-    git_rev = Utils.git_short_head
-
-    ldflags = %W[
-      -X github.com/la5nta/pat/internal/buildinfo.GitRev=#{git_rev}
-    ]
-
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args
   end
 
   test do
